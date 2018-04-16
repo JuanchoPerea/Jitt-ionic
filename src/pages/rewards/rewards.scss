@@ -1,0 +1,40 @@
+page-rewards {
+	
+	ion-item{
+		border-radius:5px;
+		margin-bottom:5px !important;
+	}
+ 	  ion-icon {
+	    font-size: 25px;
+	    padding-right:15px;
+	  }
+
+	  ion-row {
+	    height: 100%;
+	    flex-wrap: wrap;
+	  }
+
+	  ion-col {
+	    flex: 0 0 25%;
+	    max-width: 25%;
+	    text-align: center;
+	    padding: 10px 5px;
+	  }
+
+	ion-label{
+	  	padding-top: 5px;
+	  	white-space: normal;
+	  }
+		
+
+	  .line{
+	  	h3{
+	  		float:left;
+	  	}
+	  	p {
+	  	float:right;
+
+	  	} 
+	  }
+
+}

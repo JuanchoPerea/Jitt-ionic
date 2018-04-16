@@ -1,0 +1,48 @@
+<!--
+  Generated template for the PollsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar color="primary">
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+	
+    <ion-title>{{title}}</ion-title>
+   
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+ <!--bloque para actulaziacion de la pagina-->
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+	   <ion-refresher-content></ion-refresher-content>
+	 </ion-refresher>
+	<!--listado de los avisos-->
+	<ion-list>
+		<ion-label>
+			<h4 text-center>{{subtitle}}</h4>
+		</ion-label>	
+		<ion-item-group >
+	      <ion-item-sliding *ngFor="let encuesta of encuestas | filtroGrupos : groups">
+				
+	        <button ion-item color="primary" (click)="showEncuesta(encuesta)" >
+	          <h3>{{encuesta.title}}</h3>
+	          <p>
+	           {{encuesta.message}}
+	          </p>
+	          <a *ngIf="encuesta.voted">{{button[0]}}</a>
+	           <a *ngIf="!encuesta.voted">{{button[1]}}</a>
+	        </button>
+
+	      </ion-item-sliding>
+
+	    </ion-item-group>
+						
+	 </ion-list>
+
+ 
+	              
+</ion-content>
+

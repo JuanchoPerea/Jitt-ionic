@@ -1,0 +1,40 @@
+page-quiz {
+	
+	h2.alert-title{
+		font-size:12px;
+	}
+
+	ion-label{
+	  white-space: normal;
+	  .title_quest{
+	  	width:100%;
+	  }  
+
+	}
+
+	button{
+		border-radius:5px;
+	}
+
+	ion-item div{
+		p{
+			border-radius:5px;
+			border-style: solid;
+			padding: 4px;
+			border: 1px solid;	
+		}
+	}
+
+	.alert-ios .alert-radio-label{
+	 white-space: normal !important;
+	}
+	.asig_quest{
+	 width:100%;
+
+	}
+	.select-text{
+	  white-space: normal;
+	  width:100%;
+	}
+
+}

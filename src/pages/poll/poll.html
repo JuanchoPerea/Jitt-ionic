@@ -1,0 +1,65 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+	
+    <ion-title>{{title}}</ion-title>
+   
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+ <!--bloque para actulaziacion de la pagina
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+	   <ion-refresher-content></ion-refresher-content>
+	 </ion-refresher>-->
+	<!--listado de los avisos-->
+			<ion-card *ngIf="encuesta.voted">
+			
+			  <ion-card-header>
+				<ion-label text-wrap id="title_option">{{encuesta.title}}</ion-label>	
+			  </ion-card-header>
+			
+			  <ion-card-content>
+  				<img src="assets/imgs/grafico.jpg">   
+			  </ion-card-content>
+			
+			</ion-card>
+	
+	    	<ion-card *ngIf="!encuesta.voted">
+	    	
+	    	  <ion-card-header>
+	    	     <ion-label text-wrap id="title_option">{{encuesta.title}}</ion-label>
+	    	  </ion-card-header>
+	    	
+	    	  <ion-card-content>
+	    	   
+	    	   <form #votedForm="ngForm" novalidate>
+	  
+		        <ion-list radio-group>
+		       	
+		       	  	 <ion-input type="hidden" [(ngModel)]="optionvoted.poll_id" name="poll_id"></ion-input>
+		    
+				 	 <ion-input type="hidden"  [(ngModel)]="optionvoted.user_id" name="user_id"></ion-input>
+				  <ion-item *ngFor="let option of options">
+				    <ion-label>{{option.text}}</ion-label>
+				    <ion-radio value="{{option.id}}" (ionSelect)="getIdOption(option.id)"  ></ion-radio>
+				  </ion-item>
+				 
+		       	  	 <ion-input type="hidden" [(ngModel)]="optionvoted.poll_option_id"   name="poll_option_id"></ion-input>
+		       
+				</ion-list>
+				<ion-row responsive-sm>
+					<ion-col>
+						<button ion-button (click)="pollVoted(votedForm)" type="submit" block>{{buttom}}</button>
+					</ion-col>
+				</ion-row>     
+			   </form>
+	    	  </ion-card-content>
+	    	
+	    	</ion-card>
+
+
+ 
+	              
+</ion-content>

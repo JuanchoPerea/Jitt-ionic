@@ -34,11 +34,12 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #B7D3EB,
+  secondary:  #5c8ab0,
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  light:      #9E99A7,
+  dark:       #313628,
+  favorite:   #7BF069
 );
 
 
@@ -86,3 +87,5 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
